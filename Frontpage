@@ -11,5 +11,8 @@
 
 
 
-</body>
+</body> {
+	background: light blue;
+	}
+
 </html>
