@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-
-
-
+<style> 
 body {
 	background-color: #839ed3;
 	}
@@ -15,6 +12,12 @@ h4 img {
 	border: 3px solid black;
 	}
 
+li  {
+	color: white;
+	text-align: left;
+	font-family: Arial;
+	}
+	
 h2  {
 	color: white;
 	text-align: center;
@@ -23,21 +26,37 @@ h2  {
 
 
 .icon1 .icon2 .icon3 {
-		margin: auto;
+	margin: auto;
 	}
 	
 .container {
-		text-align: center;
+	text-align: center;
 	}
 
-</style>
+</style> 
+
+
 <h4><img src="http://3.bp.blogspot.com/-OmQM_e1BC84/VkfJnnN7khI/AAAAAAAABHA/j7zFnRuB0jE/s928-r/glendemoniumbanner.png"><h4>
 </head>
+
 <body>
   
   
-  <h2><b>Under Construction</b></h2>
+  <h2 id="headline">What would you like to know?</h2>
+ <button> "Who is Glendemonium" </button>
  
+ <ul id="our-list">
+	<li>About Me</li>
+	<li>Projects</li>
+	<li>Hobbies</li>
+	<li>Future Projects</li>
+	<li>A Thank You</li>
+	</ul>
+  
+  
+  
+  
+  
   <h2> In the mean time, follow me on social media: </h2>
   
 	<div class="container">
@@ -60,6 +79,20 @@ h2  {
 		</div>	
 	</div>
 	
+<script>
+
+var ourHeadline = document.getElementById("headline");
+var listItems = document.getElementsById("our-list").getElementsByTagName("li")
+
+for(i = 0; i < listItems.length; i++) {
+	listItems[i].addEventListener("click", activateItem);
+}
+
+fuction activateItem() {
+	ourHeadline.innerHTML = this.innerHTML;
+}
+
+</script>	
 	
 
 </body> 
