@@ -2,41 +2,7 @@
 <html>
 <title>index.html</title>
 <head>
-<script type="text/javascript">
-<!-->
-var image1=new Image()
-image1.src="glendemoniumbanner.png"
-var image2=new Image()
-image1.src="glendemoniumbanner1.png"
-var image3=new Image()
-image1.src="glendemoniumbanner2.png"
-var image4=new Image()
-image1.src="glendemoniumbanner3.png"
-var image5=new Image()
-image1.src="glendemoniumbanner5.png"
-//-->
-</script>
-<style> 
-	<img src=glendemoniumbanner.png" name="slide">
-	
-<script type="text/javascript">
-<!--
-var step=1
-function slideit(){
-document.images.slide.src=eval("image"+step+.src")
-if(step<4)
-step++
-else
-step=1
-setTimeout(slideit()",2500)
-}
-slideit()
-//-->
-	
-
-
-</script>
-
+<style>
 
 
 body {
@@ -79,7 +45,35 @@ p  {
 .container {
 	text-align: center;
 	}
+	
+#container{
+	border:1px solid black;
+	margin: 0 auto;
+	
+#container>img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
 
+#container>button{
+	postion: absolute;
+	width: 50px;
+	height: 50px;
+	border: none;
+	border-radius: 25px;
+	top: 200px;
+}
+
+#btn2{
+	position: relative;
+	float: right;
+}
+
+#btn1{
+	position: relative;
+	float: left;
+}
 #rcorners1 {
     border-radius: 25px;
     background: black;
@@ -96,7 +90,15 @@ p  {
 </head>
 
 <body>
-  
+	<div id="container">
+		<img class="slides" src="glendemoniumbanner.png"/>
+		<img class="slides" src="glendemoniumbanner1.png"/>
+		<img class="slides" src="glendemoniumbanner2.png"/>
+		<img class="slides" src="glendemoniumbanner3.png"/>
+		<img class="slides" src="glendemoniumbanner5.png"/>
+		<button class="btn" id="btnl">&#10094;</button>
+		<button class="btn" id="btnl">&#10095;</button>
+	</div>
   
  <h2 id="headline">What would you like to know?</h2>
 
@@ -169,11 +171,7 @@ function myFunction(5) {
 	document.getElementById("rcorners1").innerHTML = "To anyone willing to support my endeavors, please wish me luck!"
 }
 
-
-	
-
-</body> 
-</html>	
+</script>	
 	
 
 </body> 
