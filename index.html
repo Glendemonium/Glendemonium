@@ -1,7 +1,44 @@
 <!DOCTYPE html>
 <html>
+<title>index.html</title>
 <head>
+<script type="text/javascript">
+<!-->
+var image1=new Image()
+image1.src="glendemoniumbanner.png"
+var image2=new Image()
+image1.src="glendemoniumbanner1.png"
+var image3=new Image()
+image1.src="glendemoniumbanner2.png"
+var image4=new Image()
+image1.src="glendemoniumbanner3.png"
+var image5=new Image()
+image1.src="glendemoniumbanner5.png"
+//-->
+</script>
 <style> 
+	<img src=glendemoniumbanner.png" name="slide">
+	
+<script type="text/javascript">
+<!--
+var step=1
+function slideit(){
+document.images.slide.src=eval("image"+step+.src")
+if(step<4)
+step++
+else
+step=1
+setTimeout(slideit()",2500)
+}
+slideit()
+//-->
+	
+
+
+</script>
+
+
+
 body {
 	background-color: #839ed3;
 	}
@@ -18,13 +55,23 @@ li  {
 	font-family: Arial;
 	}
 	
+h1 {
+	text-align: center;
+	color: white;
+	font-family: Arial;
+	}
+	
 h2  {
+	color: white;
+	font-family: Arial;
+	}
+
+p  {
 	color: white;
 	text-align: center;
 	font-family: Arial;
 	}
-
-
+	
 .icon1 .icon2 .icon3 {
 	margin: auto;
 	}
@@ -33,6 +80,15 @@ h2  {
 	text-align: center;
 	}
 
+#rcorners1 {
+    border-radius: 25px;
+    background: black;
+    padding: 20px; 
+    width: 600px;
+    height: 50px; 
+	
+}
+	
 </style> 
 
 
@@ -42,22 +98,27 @@ h2  {
 <body>
   
   
-  <h2 id="headline">What would you like to know?</h2>
- <button> "Who is Glendemonium" </button>
+ <h2 id="headline">What would you like to know?</h2>
+
+ <p id="rcorners1">Click on the list to learn more</p>
+ 
+ 
+ 
+ 
  
  <ul id="our-list">
-	<li>About Me</li>
-	<li>Projects</li>
-	<li>Hobbies</li>
-	<li>Future Projects</li>
-	<li>A Thank You</li>
+	<li type="button" onclick="myFunction(1)">About Me</li>
+	<li type= "button" onclick="myFunction(2)">Projects</li>
+	<li type= "button" onclick="myFunction(3)">Hobbies</li>
+	<li type= "button" onclick="myFunction(4)">Future Projects</li>
+	<li type= "button" onclick="myFunction(5)">A Thank You</li>
 	</ul>
   
   
   
   
   
-  <h2> In the mean time, follow me on social media: </h2>
+  <h1> In the mean time, follow me on social media: </h1>
   
 	<div class="container">
 		<div class="icons">
@@ -80,19 +141,39 @@ h2  {
 	</div>
 	
 <script>
-
+var describe = document.getElementById("description");
 var ourHeadline = document.getElementById("headline");
-var listItems = document.getElementsById("our-list").getElementsByTagName("li")
+var listItems = document.getElementById("our-list").getElementsByTagName("li");
 
 for(i = 0; i < listItems.length; i++) {
 	listItems[i].addEventListener("click", activateItem);
 }
 
-fuction activateItem() {
+function activateItem() {
 	ourHeadline.innerHTML = this.innerHTML;
+}	
+
+function myFunction(1) {
+	document.getElementById("rcorners1").innerHTML = "I'm just a guy on the internet that wants to share his works."
+}
+function myFunction(2) {
+	document.getElementById("rcorners1").innerHTML = "Creator of the "Baxter" series of games, on Steam and Google Play, as well as the book "Creeper High."
+}
+function myFunction(3) {
+	document.getElementById("rcorners1").innerHTML = "Drawing, Gaming, Learning to Code, Weight Lifting, Cooking, Internet"
+}
+function myFunction(4) {
+	document.getElementById("rcorners1").innerHTML = "Eventually will start a series of Youtube videos just talking about anything."
+}
+function myFunction(5) {
+	document.getElementById("rcorners1").innerHTML = "To anyone willing to support my endeavors, please wish me luck!"
 }
 
-</script>	
+
+	
+
+</body> 
+</html>	
 	
 
 </body> 
