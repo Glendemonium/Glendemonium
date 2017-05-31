@@ -69,12 +69,14 @@ p  {
 	top: 200px;
 }
 
-#container>btn2{
+#container>#btn2:hover{
+	box-shadow: 10px 0px 20px 10px black;
 	position: relative;
 	float: right;
 }
 
-#container>btn1{
+#container>#btn1:hover{
+	box-shadow: 10px 0px 20px 10px black;
 	position: relative;
 	float: left;
 }
@@ -90,19 +92,20 @@ p  {
 </style> 
 
 
-<h4><img src="http://3.bp.blogspot.com/-OmQM_e1BC84/VkfJnnN7khI/AAAAAAAABHA/j7zFnRuB0jE/s928-r/glendemoniumbanner.png"><h4>
-	</h4>
-
-<body>
+<h4>
 	<div id="container">
 		<img class="slides" src="glendemoniumbanner.png"/>
 		<img class="slides" src="glendemoniumbanner1.png"/>
 		<img class="slides" src="glendemoniumbanner2.png"/>
 		<img class="slides" src="glendemoniumbanner3.png"/>
 		<img class="slides" src="glendemoniumbanner5.png"/>
-		<button class="btn" id="btnl">&#10094;</button>
-		<button class="btn" id="btn2">&#10095;</button>
+		<button class="btn" id="btnl" onclick="plusIndex(-1)">&#10094;</button>
+		<button class="btn" id="btn2" onclick="plusIndex(1)">&#10095;</button>
 	</div>
+</h4>
+
+<body>
+	
   
  <h2 id="headline">What would you like to know?</h2>
 
@@ -147,34 +150,26 @@ p  {
 	</div>
 	
 <script>
-var describe = document.getElementById("description");
-var ourHeadline = document.getElementById("headline");
-var listItems = document.getElementById("our-list").getElementsByTagName("li");
-
-for(i = 0; i < listItems.length; i++) {
-	listItems[i].addEventListener("click", activateItem);
-}
-
-function activateItem() {
-	ourHeadline.innerHTML = this.innerHTML;
-}	
-
-function myFunction(1) {
-	document.getElementById("rcorners1").innerHTML = "I'm just a guy on the internet that wants to share his works."
-}
-function myFunction(2) {
-	document.getElementById("rcorners1").innerHTML = "Creator of the "Baxter" series of games, on Steam and Google Play, as well as the book "Creeper High."
-}
-function myFunction(3) {
-	document.getElementById("rcorners1").innerHTML = "Drawing, Gaming, Learning to Code, Weight Lifting, Cooking, Internet"
-}
-function myFunction(4) {
-	document.getElementById("rcorners1").innerHTML = "Eventually will start a series of Youtube videos just talking about anything."
-}
-function myFunction(5) {
-	document.getElementById("rcorners1").innerHTML = "To anyone willing to support my endeavors, please wish me luck!"
-}
-
+	var index = 0;
+	
+	function plusIndex(n){
+		index = index +1;
+		showImage(index);
+	}
+	
+	showImage(1);
+	
+	function showImage(n){
+		var 1;
+		var x = document.getElementsByClassName("slides");
+		if(n > x.length){ index = 1};
+		if(n < 1){ index = x.length};
+		for(i=0; i<x.length; i++)
+		{
+			x[i].style.display = "none";
+		}
+		x[index-1].style.display = "block";
+	}
 </script>	
 	
 
