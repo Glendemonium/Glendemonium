@@ -118,47 +118,44 @@ h1 {
 }
 	/* resume buttons below*/
 .resume {
-    position: relative;
-    margin: auto;
-    border: none;
-    font-size: 28px;
-    background-color: orange;
-    color: #FFFFFF;
-    padding: 2px;
-    text-align: center;
-    -webkit-transition-duration: 0.4s; /* Safari, because reasons */
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 	
 }
 
-.resume:hover {
-    opacity: 0.5;
-    filter: alpha(opacity=100); /* this makes the buttons shine! */
-}
-	
-.resume:after {
-    content: "";
-    background: white;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
+.resume span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-.resume:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s	
+.resume span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
 }
-* {box-sizing:border-box}
+
+.resume:hover span {
+  padding-right: 25px;
+}
+
+.resume:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 
 /* Slideshow container */
 .slideshow-container {
