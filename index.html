@@ -73,7 +73,8 @@
 </div>
 	
 	<!-- About the site -->
-<div style="text-align:center">
+<div style="flex-container">
+<article style="article">
 <div style="background-color:black;color:white;padding:20px;">
      <h3>Front End and UX/XI developer!</h3>
       <p>Welcome to my little slice of the internet, I'm working on converting this piece of GitHub into a personal resume of sorts, to show potential employers my skills as a Front End Developer and UX/UI developer.  If you're an employer and you like what you see, please feel free to contact me using the navigation bar at the top!</p>
@@ -89,8 +90,8 @@
       <p>Gaming</p>
       <p>Life Hacks</p>
       </div>
+</article>
 </div>
-
 
 	
 <style>
@@ -129,7 +130,41 @@ footer {
 
 	
 	/* the three columns */
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
 
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.article {
+    text-align: left;
+}
+
+header {background: black;color:white;}
+footer {background: #aaa;color:white;}
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+.nav ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
 	/* social media buttons */
 	
 .button {
