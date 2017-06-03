@@ -4,7 +4,7 @@
 <head>	
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link ref="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -147,7 +147,6 @@ footer {
     margin: auto;
     border: none;
     font-size: 28px;
-    padding: 2px;
     text-align: center;
     -webkit-transition-duration: 0.4s; /* Safari, because reasons */
     transition-duration: 0.4s;
@@ -336,7 +335,7 @@ li a:hover {
   to {opacity: 1}
 }
 
-@keyframes fade {
+@-webkit-keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
 }
