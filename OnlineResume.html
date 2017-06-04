@@ -138,9 +138,33 @@
   </div>
 </div>
 
-
+<br>
 	
-<style>
+	
+	
+	<!-- image gallery -->
+	
+
+	<img height="540px" width="540px" style="border:3px solid grey" src="BeyonceBeyond.png" id=mainImage />
+	<br />
+	<div id=myDiv onclick="changeImage(event)">
+		<img class="imgStyle" src="BeyonceBeyond.png" />
+		<img class="imgStyle" src="CreeperHigh.png" />	
+		<img class="imgStyle" src="MONK.png" />
+		<img class="imgStyle" src="Dodge-Fu.png" />
+		<img class="imgStyle" src="BaxterAdventureTitleCard.png" />
+		<img class="imgStyle" src="MetalGearShatner.png" />
+	</div>
+<style type="text/css">
+/* for image gallery */	
+	.imgStyle {
+		height: 100px;
+		width: 100px;
+		border: 3px solid grey;
+	
+	}
+	
+	
 /* body background */
 body {
     background-image: url("Programmerbg.png");
@@ -472,7 +496,7 @@ li a:hover {
 
 </style>
 	
-<script>
+<script type="text/javascript">
 	//top slideshow
 	
 var slideIndex = 1;
@@ -504,10 +528,34 @@ function showSlides(n) {
 	
 
 	
-	//resume buttons below	
-
-
+	//image gallery	
 	
+	
+var images = document.getElementById("myDiv").getElementsByTagName("img");
+
+for (var i = 0; i < images.length; i++){
+	images[i].onmouseover = function () {
+		this.style.cursor = 'hand';
+		this.style.borderColor = 'white';
+	}
+	
+	images[i].onmouseover = function () {
+		this.style.cursor = 'pointer';
+		this.style.borderColor = 'black';
+	}
+	
+function changeImage(event) {
+	
+
+	event = event || window.event;
+	
+	var targetElement = event.target || event.srcElement;
+	
+	if(targetElement.tagName == "IMG") 
+	{
+	document.getElementById("mainImage").src = targetElement.getAttribute("src");
+	}
+}	
 </script>
     
 
