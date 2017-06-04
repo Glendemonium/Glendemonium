@@ -70,12 +70,12 @@
 <div style="text-align:center">
 	<div class="nav">
 	    <ul>
-		<div class="dropdown"> 
-		<li><a class="resume" href="#aboutme"><span>About me </span></a></li>
-		  	<div class="dropdown-content">
+		 
+		<li class="tooltip"><a class="resume" href="#aboutme"><span>About me </span></a></li>
+		  	<span class="tooltiptext">
     					<p>I like to learn new things, programming especially.</p>
       					<p>I learned basic HTML and CSS back in 08, Self taught in Javascript, Bootstrap, SQL, and continued learning in new CSS scripts.</p>
-			    </div></div>
+			</span>
 		    
 		<li><a class="resume" href="#experience"><span>Experience </span></a></li>
 		    
@@ -310,23 +310,28 @@ li a:hover {
 	
 	
 /* Resume descriptions */
-.dropdown {
+.tooltip {
     position: relative;
     display: inline-block;
+    border-bottom: 1px dotted black;
 }
 
-.dropdown-content {
-    display: none;
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
     z-index: 1;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 /* Slideshow container */
 .slideshow-container {
