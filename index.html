@@ -68,12 +68,12 @@
 	
 	<!-- Resume --><!-- Trigger/Open The Modal -->
 <div style="text-align:center">
-	<div class="nav">
+	
 	    <ul>
 		 
 		<li type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle" id="menu1"><a class="resume" href="#aboutme"><span>About me </span></a></li>
 		  	<ul class="dropdown menu" role="menu" aria-labelledby="menu1">
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">I like to learn new things, programming especially.</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Love learning new things, challenge myself.</a></li>
 				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">I learned basic HTML and CSS back in 08, Self taught in Javascript, Bootstrap, SQL, and continued learning in new CSS scripts.</a></li>
       				
 			</ul>
@@ -87,7 +87,7 @@
 		<li><a class="resume" href="#contactinfo"><span>Contact Info </span></a></li>
 		    
 	    </ul>
-	 </div>
+	
     </div>
 	<!-- Resume Pop Ups -->
 
@@ -463,7 +463,9 @@ function showSlides(n) {
 
 	
 	//resume buttons below	
-	
+$(document).ready(function(){
+    $(".dropdown-toggle").dropdown();
+});
 	
 
 	
