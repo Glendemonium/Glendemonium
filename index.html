@@ -70,11 +70,19 @@
 <div style="text-align:center">
 	<div class="nav">
 	    <ul>
-		<li id="About"><a class="resume" href="#aboutme"><span>About me </span></a></li>
-		<li id="Exp"><a class="resume" href="#experience"><span>Experience </span></a></li>
-        	<li id="Qual"><a class="resume" href="#qualifications"><span>Qualifications </span></a></li>
-		<li id="Add"><a class="resume" href="#additional"><span>Additional </span></a></li>
-		<li id="Cont"><a class="resume" href="#contactinfo"><span>Contact Info </span></a></li>
+		<li button id="About"><a class="resume" href="#aboutme"><span>About me </span></a></li>
+		    <div id="messageBox" class="demoMessage">
+			    <p>I like to learn new things, programming especially.</p>
+      				<p>I learned basic HTML and CSS back in 08, Self taught in Javascript, Bootstrap, SQL, and continued learning in new CSS scripts.</p>
+				<button id="hideBtn">Close</button></div>
+		<li button id="Exp"><a class="resume" href="#experience"><span>Experience </span></a></li>
+		    
+        	<li button id="Qual"><a class="resume" href="#qualifications"><span>Qualifications </span></a></li>
+		    
+		<li button id="Add"><a class="resume" href="#additional"><span>Additional </span></a></li>
+		    
+		<li button id="Cont"><a class="resume" href="#contactinfo"><span>Contact Info </span></a></li>
+		    
 	    </ul>
 	 </div>
     </div>
@@ -82,24 +90,16 @@
 
 
 
-<!-- The Modal -->
-  <!-- Modal content "About Me"-->
-<div id="Modal1" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>About Me</h2>
-    </div>
-    <div class="modal-body">
-      <p>I like to learn new things, programming especially.</p>
-      <p>I learned basic HTML and CSS back in 08, Self taught in Javascript, Bootstrap, SQL, and continued learning in new CSS scripts.</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Also love avacados!</h3>
-    </div>
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
   </div>
 </div>
-	
+
+
 
 
 	
@@ -169,76 +169,7 @@ footer {
     font-size: 12px;
     text-align: center;
 }
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
 
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 38px;
-    font-weight: bold;
-}
-
-
-.close:focus {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: grey;
-    color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-    padding: 2px 16px;
-    background-color: grey;
-    color: white;
-}
-	
 	/* the three columns */
 .floater{
     
@@ -389,6 +320,18 @@ li a:hover {
   opacity: 1;
   right: 0;
 }
+	
+	
+/* Resume descriptions */
+.demoMessage
+{
+   display: none;
+   background-color:black;
+   color: white;
+   padding: 5px;
+   width:600px;
+   height:600px
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -487,6 +430,8 @@ li a:hover {
 </style>
 	
 <script>
+	//top slideshow
+	
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -514,39 +459,19 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 	
-// Get the modal for the pop ups
-var modal = document.getElementById('Modal1');
-var modal = document.getElementById('Modal2');
-var modal = document.getElementById('Modal3');
-var modal = document.getElementById('Modal4');
-var modal = document.getElementById('Modal5');
-// Get the button that opens the modal
-var btn = document.getElementById("About");
-var btn = document.getElementById("Exp");
-var btn = document.getElementById("Qual");
-var btn = document.getElementById("Add");
-var btn = document.getElementById("Cont");
+
+	
+	//resume buttons below	
 	
 	
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+$(document).ready(function(){
+    $("#showBtn").click(function(){
+        $("#messageBox").fadeIn();
+    });
+    $("#hideBtn").click(function(){
+        $("#messageBox").fadeOut();
+    });
+});
 	
 </script>
     
