@@ -75,7 +75,7 @@
 		    <div class="dropdown-content">
     			<a href="#">I like to learn new things, programming especially.</a>
      			<a href="#">I learned basic HTML and CSS back in 08, Self taught in Javascript, Bootstrap, SQL, and continued learning in new CSS scripts.</a>
-  			
+		    </div>
 		<li><a class="resume" href="#experience"><span>Experience </span></a></li>
 		    
         	<li><a class="resume" href="#qualifications"><span>Qualifications </span></a></li>
@@ -309,28 +309,44 @@ li a:hover {
 	
 	
 /* Resume descriptions */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-    /* Position the tooltip */
+.dropdown-content {
+    display: none;
     position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }
 /* Slideshow container */
 .slideshow-container {
