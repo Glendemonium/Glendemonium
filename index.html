@@ -61,19 +61,110 @@
   <span class="dot" onclick="currentSlide(4)"></span> 
   <span class="dot" onclick="currentSlide(5)"></span> 
 </div>
-	<!-- Resume -->
+	
+	
+	
+	
+	
+	<!-- Resume --><!-- Trigger/Open The Modal -->
 <div style="text-align:center">
 	<div class="nav">
 	    <ul>
-		<li><a class="resume" href="#aboutme"><span>About me </span></a></li>
-		<li><a class="resume" href="#experience"><span>Experience </span></a></li>
-        	<li><a class="resume" href="#qualifications"><span>Qualifications </span></a></li>
-		<li><a class="resume" href="#additional"><span>Additional </span></a></li>
-		<li><a class="resume" href="#contactinfo"><span>Contact Info </span></a></li>
+		<li id="About"><a class="resume" href="#aboutme"><span>About me </span></a></li>
+		<li id="Exp"><a class="resume" href="#experience"><span>Experience </span></a></li>
+        	<li id="Qual"><a class="resume" href="#qualifications"><span>Qualifications </span></a></li>
+		<li id="Add"><a class="resume" href="#additional"><span>Additional </span></a></li>
+		<li id="Cont"><a class="resume" href="#contactinfo"><span>Contact Info </span></a></li>
 	    </ul>
 	 </div>
     </div>
+	<!-- Resume Pop Ups -->
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content "About Me"-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>About Me</h2>
+    </div>
+    <div class="modal-body">
+      <p>I like to learn new things, programming especially.</p>
+      <p>I learned basic HTML and CSS back in 08, Self taught in Javascript, Bootstrap, SQL, and continued learning in new CSS scripts.</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Also love avacados!</h3>
+    </div>
+  </div>
+
+	  <!-- Modal content "Experience"-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="modal-body">
+      <p>Extensive knowledge on HTML, CSS, (5 years) experienced in Javascript, Bootstrap, SQL (over a year)</p>
+      <p>Highly proficient in Adobe Photoshop/Illustrator 10+ years</p>
+      <p>Self developed and deployed games on Android and Steam (PC) platforms, both done in HTML(5)</p>    
+      <p>Experienced with Git and Github formats</p>
+    </div>
+    <div class="modal-footer">
+      <h3>I can adapt to new framworks and languages if the need comes.</h3>
+    </div>
+  </div>
 	
+	  <!-- Modal content "Qualifications"-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Education</h2>
+    </div>
+    <div class="modal-body">
+      <p>Art Institute - BA in Computer Science</p>
+      <p>Self-Taught programmer since 2012</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Did I mention I like avacados?</h3>
+    </div>
+  </div>
+	
+	  <!-- Modal content "Additional"-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Additional Information</h2>
+    </div>
+    <div class="modal-body">
+      <p>Team player</p>
+      <p>Strong communication skills</p>
+      <p>Adaptable to new technology</p> 
+      <p>Long time graphic design background</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Design is my passion, what can I say?</h3>
+    </div>
+  </div>
+	
+	  <!-- Modal content "Contact Info"-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Contact Information</h2>
+    </div>
+    <div class="modal-body">
+      <p>email: glenngallimore@gmail.com</p>
+      <p>you could also contact me on my social media links at the bottom of the page.</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Phone: please email, for safety.</h3>
+    </div>
+  </div>
+	
+</div>
 	
 	
 	<!-- About the site -->
@@ -139,7 +230,75 @@ footer {
     font-size: 12px;
     text-align: center;
 }
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: blue;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: blue;
+    color: white;
+}
 	
 	/* the three columns */
 .floater{
@@ -415,6 +574,38 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block"; 
   dots[slideIndex-1].className += " active";
 }
+	
+// Get the modal for the pop ups
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("About");
+var btn = document.getElementById("Exp");
+var btn = document.getElementById("Qual");
+var btn = document.getElementById("Add");
+var btn = document.getElementById("Cont");
+	
+	
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+	
 </script>
     
 
