@@ -270,10 +270,16 @@ ul {
 
 li {
     float: left;
-    
+    display: inline;
+    position: relative;
 }
 
 
+ul ul {
+    position: absolute;
+    display: none;
+}
+	
 li a {
     display: block;
     color: white;
@@ -282,7 +288,11 @@ li a {
     text-decoration: none;
     
 }
-
+	
+li:hover ul {
+    display: block;
+}
+	
 li a:hover {
     background-color: grey;
 }
