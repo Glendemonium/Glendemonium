@@ -71,10 +71,12 @@
 	<div class="nav">
 	    <ul>
 		<li button id="About"><a class="resume" href="#aboutme"><span>About me </span></a></li>
-		    <div id="messageBox" class="demoMessage">
-			    <p>I like to learn new things, programming especially.</p>
-      				<p>I learned basic HTML and CSS back in 08, Self taught in Javascript, Bootstrap, SQL, and continued learning in new CSS scripts.</p>
-				<button id="hideBtn">Close</button></div>
+		    <div class="dropdown">
+  			<div class="dropdown-content">
+    					<p>I like to learn new things, programming especially.</p>
+      					<p>I learned basic HTML and CSS back in 08, Self taught in Javascript, Bootstrap, SQL, and continued learning in new CSS scripts.</p>
+  				</div>
+			</div>
 		<li button id="Exp"><a class="resume" href="#experience"><span>Experience </span></a></li>
 		    
         	<li button id="Qual"><a class="resume" href="#qualifications"><span>Qualifications </span></a></li>
@@ -308,17 +310,24 @@ li a:hover {
 	
 	
 /* Resume descriptions */
-.demoMessage
-{
-   display: block;
-   position: static;
-   background-color:black;
-   color: white;
-   padding: 5px;
-   width:600px;
-   height:600px
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -450,14 +459,7 @@ function showSlides(n) {
 	//resume buttons below	
 	
 	
-$(document).ready(function(){
-    $("#About").click(function(){
-        $("#messageBox").fadeIn();
-    });
-    $("#hideBtn").click(function(){
-        $("#messageBox").fadeOut();
-    });
-});
+
 	
 </script>
     
